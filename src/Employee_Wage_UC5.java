@@ -29,4 +29,4 @@ public class Employee_Wage_UC5
         u5.set(1,2);
         u5.get();
     }
-}}
+}
