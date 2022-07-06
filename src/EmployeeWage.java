@@ -5,8 +5,6 @@ interface ImanageEmpWage
 
 public class EmployeeWage implements ImanageEmpWage
 {
-
-
     public static final int FULL_DAYS_HOUR = 2;
     public static final int PART_DAYS_HOURS = 1;
 
@@ -16,19 +14,22 @@ public class EmployeeWage implements ImanageEmpWage
     private final int maxHoursPerMonth;
     private int totalEmpWage;
 
-    public EmployeeWage (String company, int wagePerHour, int numOfWorkingDays, int maxHrsPerMonth) {
+    public EmployeeWage (String company, int wagePerHour, int numOfWorkingDays, int maxHrsPerMonth)
+    {
         this.company = company;
         this.maxHoursPerMonth = maxHrsPerMonth;
         this.numOfWorkingDays = numOfWorkingDays;
         this.wagePerHour = wagePerHour;
     }
-    public void setTotalEmpWage(int totalEmpWage) {
+    public void setTotalEmpWage(int totalEmpWage)
+    {
         this.totalEmpWage = totalEmpWage;
     }
-
-    public void empWageSystem() {
+    public void empWageSystem()
+    {
         int empHours = 0,  totalHrs = 0, totalWorkingDays = 0;
-        while (totalHrs <= maxHoursPerMonth && totalWorkingDays < numOfWorkingDays) {
+        while (totalHrs <= maxHoursPerMonth && totalWorkingDays < numOfWorkingDays)
+        {
             totalWorkingDays++;
             int checkOut = (int) Math.floor(Math.random() * 10) % 3;
             switch (checkOut) {
@@ -49,21 +50,31 @@ public class EmployeeWage implements ImanageEmpWage
 
     }
     @Override
-    public String toString() {
+    public String toString()
+    {
         return "Total Emp Wage for Company: " +company+ " is: " +totalEmpWage;
     }
 
 
     public static void main(String[] darsh)
     {
+        System.out.println("--------Welcome Employee Wage Problem---------");
         EmployeeWage samSung = new EmployeeWage("SAMSUNG",20, 25, 90);
         EmployeeWage noKia = new EmployeeWage("NOKIA", 25, 25, 80);
+        EmployeeWage TCS = new EmployeeWage("TCS", 20, 25, 80);
+
+
 
         samSung.empWageSystem();
         System.out.println(samSung);
 
         noKia.empWageSystem();
         System.out.println(noKia);
+
+        TCS.empWageSystem();
+        System.out.println(TCS);
+
+        System.out.println("------------------------------------------");
 
 
     }
