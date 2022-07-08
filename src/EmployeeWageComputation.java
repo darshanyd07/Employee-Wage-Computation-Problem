@@ -128,6 +128,7 @@ class EmployeeWageComputation implements IEmployeeWageComputation
 
     public static void main(String args[])
     {
+        System.out.println("----------------Employee Wage Computation Problem----------------------");
         EmployeeWageComputation employeeWageComputation = new EmployeeWageComputation();
         employeeWageComputation.addCompany("Microsoft", 4, 30, 100);
         employeeWageComputation.addCompany("Google", 5, 40, 170);
